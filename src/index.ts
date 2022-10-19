@@ -1,5 +1,7 @@
 import { SongResult, SongResultMap } from './utils/result'
 
+import axios from 'axios'
+
 export class SpotifyService {
     private accessToken: string = ''
     
@@ -22,41 +24,39 @@ export class SpotifyService {
     }
 
     private async getAccessToken(): Promise<void> {
-        let options = {
-            method: 'POST',
-            body: new URLSearchParams({
-                client_id: this.clientId,
-                client_secret: this.clientSecret,
-                refresh_token: this.refreshToken,
-                grant_type: 'refresh_token',
-            })
-        }
+        try {
+            const response = await axios({ url: 'https://accounts.spotify.com/api/token', 
+                method: 'POST', 
+                params: {
+                    client_id: this.clientId,
+                    client_secret: this.clientSecret,
+                    refresh_token: this.refreshToken,
+                    grant_type: 'refresh_token',
+                }
+            }).then((res) => res.data)
 
-        const { access_token } = await fetch('https://accounts.spotify.com/api/token', options).then((res) => res.json())
-
-        if(!access_token) {
+            this.setAccessToken(response.access_token)
+        } catch(error) {
             throw new Error('Invalid credentials were given')
         }
+    } 
 
-        this.setAccessToken(access_token)
-    }   
-
-    public async getCurrentSong(): Promise<SongResult | unknown> {
-        if(!this.hasAccessToken()) {
-            await this.getAccessToken()
-        }
-
-        const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-            method: 'GET',
-            headers: {
-                'Authorization': 'Bearer ' + this.accessToken
+    public async getCurrentSong(): Promise<SongResult> {
+        try {
+            if(!this.hasAccessToken()) {
+                await this.getAccessToken()
             }
-        }).then((res) => res.json())
 
-        if(!response) {
+            const response = await axios({ url: 'https://api.spotify.com/v1/me/player/currently-playing', 
+                method: 'GET', 
+                headers: {
+                    'Authorization': 'Bearer ' + this.accessToken
+                }
+            }).then((res) => res.data)
+            
+            return SongResultMap.parseSong(response)
+        } catch(error) {
             throw new Error('Couldn\'t acquire access token')
         }
-        
-        return SongResultMap.parseSong(response)
     }
 }
