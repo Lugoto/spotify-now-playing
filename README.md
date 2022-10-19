@@ -1,3 +1,7 @@
+![](https://img.shields.io/github/workflow/status/bigarmTomi/spotify-now-playing/CI)
+![](https://img.shields.io/github/license/bigarmTomi/spotify-now-playing)
+![](https://img.shields.io/github/package-json/v/bigarmTomi/spotify-now-playing)
+
 🎧 lightweight libary to display your currently played song 🎵
 
 ## 🖊 Getting started
