@@ -1,8 +1,17 @@
+<div align="center">  
+    <img src="https://github.com/bigarmTomi/spotify-now-playing/blob/master/docs/spotify-1.png" />
+    <img src="https://github.com/bigarmTomi/spotify-now-playing/blob/master/docs/spotify-2.png" />
+    <img src="https://github.com/bigarmTomi/spotify-now-playing/blob/master/docs/spotify-3.png" />
+</div>
+
+---
+
+
 ![](https://img.shields.io/github/workflow/status/bigarmTomi/spotify-now-playing/CI)
 ![](https://img.shields.io/github/license/bigarmTomi/spotify-now-playing)
 ![](https://img.shields.io/github/package-json/v/bigarmTomi/spotify-now-playing)
 
-🎧 lightweight libary to display your currently played song 🎵
+🎧 A lightweight node library to display your currently played song through Spotify API 🎵
 
 ## 🖊 Getting started
 
