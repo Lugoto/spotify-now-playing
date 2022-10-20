@@ -11,7 +11,7 @@
 ![](https://img.shields.io/github/license/bigarmTomi/spotify-now-playing)
 ![](https://img.shields.io/github/package-json/v/bigarmTomi/spotify-now-playing)
 
-🎸🎧 A lightweight Spotify API wrapper that allows you to display the music you're currently listening to on Spotify 🎵🎺
+A lightweight Spotify API wrapper that allows you to display the music you're currently listening to on Spotify 🎸🎺
 
 ## 🖊 Getting started
 
