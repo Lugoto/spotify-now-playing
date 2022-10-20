@@ -15,7 +15,7 @@ A lightweight Spotify API wrapper that allows you to display the music you're cu
 
 ## 🖊 Getting started
 
-### ⏪ Prerequities
+### ⏪ Prerequisites
 
 1. Create an application in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/)
     - Click on the `Edit settings` button
