@@ -72,7 +72,7 @@ The full example can be found by [clicking here](https://github.com/bigarmTomi/s
 
 ---
 
-#### Use can also use the library in frameworks such as Next or React 
+#### You can also use the library in frameworks such as Next or React 
 
 `/api/spotify.ts`
 ```ts
