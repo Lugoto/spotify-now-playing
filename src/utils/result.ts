@@ -1,7 +1,8 @@
 import { Mapper } from './mapper'
 
 export type SongResult = {
-    timestamp: number,
+    progress: number,
+    title: string,
     album: {
         name: string,
         image: string,
@@ -11,8 +12,6 @@ export type SongResult = {
         name: string
         externalUrl: string
     },
-    title: string,
-    previewUrl: string,
     externalUrl: string,
     trackLength: number,
     isPlaying: boolean
@@ -24,7 +23,7 @@ export class SongResultMap implements Mapper<SongResult> {
         const { item } = result
 
         return {
-            timestamp: result.timestamp,
+            progress: result.progress_ms,
             title: item.name,
             album: {
                 name: item.album.name,
@@ -35,7 +34,6 @@ export class SongResultMap implements Mapper<SongResult> {
                 name: item.artists[0].name,
                 externalUrl: item.artists[0].external_urls.spotify
             },
-            previewUrl: item.preview_url,
             externalUrl: item.external_urls.spotify,
             trackLength: item.duration_ms,
             isPlaying: result.is_playing
