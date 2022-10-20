@@ -67,5 +67,47 @@ const Example = async () => {
     
     console.log(`Listening to **${song.title}** by ${song.artist.name}`)
 }
+```
+The full example can be found by [clicking here](https://github.com/bigarmTomi/spotify-now-playing/tree/master/example)
 
+---
+
+#### Use can also use the library in frameworks such as Next or React 
+
+`/api/spotify.ts`
+```ts
+import { NextApiRequest, NextApiResponse } from 'next'
+import { SpotifyService } from 'spotify-now-playing'
+
+export default async function(req: NextApiRequest, res: NextApiResponse) {
+    const spotify = new SpotifyService(CLIENT_ID!, CLIENT_SECRET!, REFRESH_TOKEN!)
+    const song = await spotify.getCurrentSong()
+
+    res.json(song)
+}
+```
+
+`index.tsx`
+```tsx
+export default function() {
+    var { data: song } = useSWR('/api/spotify', fetcher, {
+        refreshInterval: 5 * 1000,
+        fallbackData: 'loading',
+    })
+
+    if(song.title && !song.isPlaying) {
+        return <p>Not listening to anything</p>
+    }
+
+    return(
+        <div>
+            <img src={ song.album?.image || 'https://cdn.albert.lol/964d7fc6' } width='150px' height='150px' />
+            
+            <p>Listening to <b>{ song.title }</b> by { song.artist?.name || 'unknown' }</p>
+
+            <p>Album: { song.album?.name }</p>
+            <p>Release: { song.album?.releaseDate }</p>
+        </div>
+    )
+}
 ```
