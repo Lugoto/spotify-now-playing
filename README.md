@@ -14,6 +14,7 @@
     - Save the given `Client ID` along with the `Client Secret`
 2. Retrieve the access code
     - Visit the following URL after replacing `$CLIENT_ID`, `$SCOPE`, and `$REDIRECT_URI` 
+    
         ```url
           https://accounts.spotify.com/authorize?response_type=code&client_id=$CLIENT_ID&scope=$SCOPE&redirect_uri=$REDIRECT_URI 
         ```
@@ -21,6 +22,7 @@
 3. Note `code` from the URL you were redirected to
 4. Acquire your refresh token
     - Run the following CURL command
+    
       ```ps
         curl -X POST https://accounts.spotify.com/api/token -d "client_id=$CLIENT_ID&client_secret=$CLIENT_SECRET&grant_type=authorization_code&code=$CODE&redirect_uri=$REDIRECT_URI"
       ```
