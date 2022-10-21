@@ -30,7 +30,7 @@
     "music",
     "typescript"
   ],
-  "repository": "git://github.com/bigarmTomi/spoitfy-now-playing",
+  "repository": "git://github.com/bigarmTomi/spotify-now-playing",
   "module": "dist/use-spotify.esm.js",
   "devDependencies": {
     "axios": "^1.1.3",
