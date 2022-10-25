@@ -5,7 +5,7 @@ export type SongResult = {
         image: string,
         release: string,  
     },
-    artist: {
+    artists: {
         name: string
         url: string
     },

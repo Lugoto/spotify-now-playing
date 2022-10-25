@@ -13,7 +13,7 @@ export class SongResultMap implements Mapper<SongResult> {
                 image: item.album.images[0].url,
                 release: item.album.release_date,
             },
-            artist: {
+            artists: {
                 name: item.artists.map((x: any) => x.name),
                 url: item.artists.map((x: any) => x.external_urls.spotify)
             },
