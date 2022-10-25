@@ -56,7 +56,7 @@ export class SpotifyService {
             
             return SongResultMap.parseSong(response)
         } catch(error) {
-            throw new Error('Couldn\'t acquire access token')
+            return await this.getAccessToken() as any
         }
     }
 }
