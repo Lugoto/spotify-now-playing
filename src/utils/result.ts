@@ -6,7 +6,7 @@ export class SongResultMap implements Mapper<SongResult> {
         const { item } = result
 
         return {
-            timestamp: result.timestamp,
+            progress: result.progress_ms,
             title: item.name,
             album: {
                 name: item.album.name,

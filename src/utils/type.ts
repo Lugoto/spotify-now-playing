@@ -1,5 +1,5 @@
 export type SongResult = {
-    timestamp: number,
+    progress: number,
     album: {
         name: string,
         image: string,
