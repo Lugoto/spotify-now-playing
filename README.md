@@ -76,6 +76,8 @@ The full example can be found by [clicking here](https://github.com/bigarmTomi/s
 
 `/api/spotify.ts`
 ```ts
+// Use of backend is strongly advised as it hides internal requests that include your access token.
+
 import { NextApiRequest, NextApiResponse } from 'next'
 import { SpotifyService } from 'spotify-now-playing'
 
@@ -111,3 +113,6 @@ export default function() {
     )
 }
 ```
+Check out the [implementation of the library](https://github.com/bigarmTomi/arch.gay) in Next.js
+
+---
