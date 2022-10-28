@@ -68,11 +68,8 @@ const Example = async () => {
     console.log(`Listening to **${song.title}** by ${song.artist.name}`)
 }
 ```
-The full example can be found by [clicking here](https://github.com/bigarmTomi/spotify-now-playing/tree/master/example)
 
----
-
-#### You can also use the library in frameworks such as Next or React 
+#### You can also use the library in frameworks such as Next or React 👇
 
 `/api/spotify.ts`
 ```ts
@@ -113,6 +110,6 @@ export default function() {
     )
 }
 ```
-Check out the [implementation of the library](https://github.com/bigarmTomi/arch.gay) in Next.js
+Implementation of the library in Next.js can be found by [clicking here](https://github.com/bigarmTomi/arch.gay)
 
 ---
