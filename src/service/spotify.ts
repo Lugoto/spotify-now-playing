@@ -1,20 +1,16 @@
-import { SongResult } from '../utils/type'
+import { SongResult } from '../utils/types'
 import { SongResultMap } from '../utils/result'
 
 import axios from 'axios'
 
 export class SpotifyService {
     private accessToken: string = ''
-    
-    private clientId: string
-    private clientSecret: string
-    private refreshToken: string
 
-    constructor(clientId: string, clientSecret: string, refreshToken: string) {
-        this.clientId = clientId
-        this.clientSecret = clientSecret
-        this.refreshToken = refreshToken
-    }
+    constructor(
+        private readonly clientId: string, 
+        private readonly clientSecret: string, 
+        private readonly refreshToken: string
+    ) { }
 
     private hasAccessToken(): boolean {
         return this.accessToken !== ''
